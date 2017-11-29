@@ -3,10 +3,51 @@ import './App.css';
 import SearchBar from '../SearchBar/search_bar';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+// trim
+// to lower case
+// replace ' ' with '+'
+
+  formatSearchTerm(rawSearchTerm) {
+    return rawSearchTerm.trim().toLowerCase().replace(/ /g, '+');
+  }
+
+  formatSearchUrl(searchTerm) {
+    return "https://api.mixcloud.com/search/?q="+searchTerm+"&type=cloudcast";
+  }
+
+  MCSearch(searchUrl, responseCallback) {
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const reponse = JSON.parse(xhr.responseText);
+        responseCallback(reponse)
+      }
+    };
+    xhr.open("GET", searchUrl);
+    xhr.send();
+  }
+
+  handleSearchResults(MCApiResponse) {
+    console.log("Mixes found: ", MCApiResponse);
+  }
+
+
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar onSearchTermChange={
+          searchTerm => this.MCSearch(
+            this.formatSearchUrl(
+              this.formatSearchTerm(searchTerm)
+            ), this.handleSearchResults
+          )
+        } />
       </div>
     );
   }
