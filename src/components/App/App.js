@@ -5,6 +5,8 @@ import axios from 'axios';
 import './App.css';
 import SearchBar from '../SearchBar/search_bar';
 import MixList from '../MixList/mix_list';
+import MixEmbed from '../MixEmbed/mix_embed';
+
 
 class App extends Component {
   constructor(props) {
@@ -14,8 +16,11 @@ class App extends Component {
       searchTerm: '',
       mixes: [],
       MCSearchActive: false,
-      mixDataListIsReady: false
+      mixDataListIsReady: false,
+      selectedMix: null
     }
+
+    this.MCSearch('bonobo')
 
   }
 
@@ -69,8 +74,15 @@ class App extends Component {
 
         {this.state.mixDataListIsReady &&
           <MixList
+            onMixSelect={(selectedMix) => {
+              this.setState({selectedMix})
+            }
+            }
             mixes={this.state.mixes}
           />
+        }
+        {this.state.selectedMix &&
+          <MixEmbed mix={this.state.selectedMix}/>
         }
 
       </div>
