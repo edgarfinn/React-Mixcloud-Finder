@@ -1,22 +1,14 @@
 import React from 'react';
 import './mix_embed.css';
 
-const formatEmbedUrl = url =>
-url.replace("https://www","https://api")+"embed-html";
-
-// const testUrls = url => url.replace("https://www.mixcloud.com", "")
-
-
 const MixEmbed = ({mix}) => {
-  // console.log(testUrls(mix.url));
-  console.log('mix: ',mix);
+  const userName = mix.user.username;
+  const encodedMixName = mix.url.split('/')[mix.url.split('/').length - 2];
+
+  const encodedUrl = "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&autoplay=1&feed=%2F" + userName + "%2F" + encodedMixName + "%2F";
 
   return (
-    <div className="mix-embed">
-      <iframe className="iframe-player"
-        src={formatEmbedUrl(mix.url)}
-        ></iframe>
-    </div>
+    <iframe title={encodedUrl} className="embed-iframe" src={encodedUrl} frameBorder="0"></iframe>
   )
 }
 

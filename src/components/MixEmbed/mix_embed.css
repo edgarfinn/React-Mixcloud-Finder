@@ -1,4 +1,9 @@
-.iframe-player {
+.mix-embed-wrapper {
+  width: 100% !important;
+}
+
+.embed-iframe {
+  max-height: 60px;
   position: absolute;
   bottom: 0;
   left: 0;

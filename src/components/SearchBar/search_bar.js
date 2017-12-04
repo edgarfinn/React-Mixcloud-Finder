@@ -6,18 +6,12 @@ class SearchBar extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {searchTerm: ''};
+    this.state = {
+      searchTerm: ''
+    };
   }
   render() {
-    return (
-      <input
-        className="search-bar-input large-3 large-centered"
-        type="text"
-        placeholder = { "search" }
-        onChange = { (event) => this.onInputChange(event.target.value) }
-        value = { this.state.searchTerm }
-      />
-    )
+    return (<input className="search-bar-input large-3 large-centered" type="text" placeholder={"search"} onChange= { (event) => this.onInputChange(event.target.value) } value={this.state.searchTerm}/>)
   }
 
   onInputChange(searchTerm) {
