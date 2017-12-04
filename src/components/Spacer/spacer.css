@@ -1,0 +1,23 @@
+.spacer {
+  box-sizing: border-box;
+  background-color: black;
+  height: 2px;
+  width: 100%;
+  position: relative;
+}
+
+.spacer-ridge {
+  height: 2px;
+  width: 100px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+}
+
+.ridge-left {
+  left: 0;
+}
+
+.ridge-right {
+  right: 0;
+}
