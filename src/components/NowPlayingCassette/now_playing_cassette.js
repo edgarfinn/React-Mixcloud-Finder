@@ -2,6 +2,20 @@ import React from 'react';
 import './now_playing_cassette.css';
 
 const NowPlayingCassette = () => {
+
+  const Teethe = ()=> {
+    const Tooth = () => {
+      return (
+        <div className="wheel-tooth"></div>
+      )
+    }
+    let toothList = [];
+    while(toothList.length < 6) {
+      toothList.push( <Tooth key={toothList.length} position={(360/(toothList.length)+1)}/> );
+    }
+      return toothList;
+  }
+
   return (
     <div className="tape">
       <div className="wing wing-left"></div>
@@ -15,11 +29,14 @@ const NowPlayingCassette = () => {
       <div className="label-main">
         <div className="wheels-window-outer">
           <div className="wheel-window wheel-window-left">
-            <div className="wheel wheel-left"></div>
+            <div className="wheel wheel-left">
+            </div>
           </div>
           <div className="tape-window-center"></div>
           <div className="wheel-window wheel-window-right">
-            <div className="wheel wheel-right"></div>
+            <div className="wheel wheel-right">
+              <Teethe />
+            </div>
           </div>
         </div>
       </div>

@@ -215,3 +215,15 @@
 .square-hole-right {
   right: 23%;
 }
+/* === End Mech Panel === */
+
+/* === Wheel teeth === */
+.wheel-tooth {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  width: 4px;
+  background-color: yellow;
+  border-top: 4px solid pink;
+}
