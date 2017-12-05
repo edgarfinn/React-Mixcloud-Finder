@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // components and custom modules
 import './App.css';
-import SearchBar from '../SearchBar/search_bar';
+import Header from '../Header/header';
 import MixList from '../MixList/mix_list';
 import MixEmbed from '../MixEmbed/mix_embed';
 
@@ -14,12 +14,10 @@ class App extends Component {
     this.state = {
       searchTerm: '',
       mixes: [],
-      MCSearchActive: false,
-      mixDataListIsReady: false,
       selectedMix: null
     }
 
-    this.MCSearch('bonobo')
+    // this.MCSearch('bonobo')
 
   }
 
@@ -32,14 +30,14 @@ class App extends Component {
   }
 
   MCSearch(searchTerm) {
-    if (searchTerm === '') {
-      this.setState({mixDataListIsReady: false, mixes: []})
+    if (searchTerm.trim() === '') {
+      this.setState({mixes: []})
     } else {
       const searchQuery = this.formatSearchUrl(this.formatSearchTerm(searchTerm))
 
       return (axios.get(searchQuery).then(res => {
         const mixes = res.data;
-        this.setState({mixes: mixes, mixDataListIsReady: true})
+        this.setState({mixes})
       }).catch((err) => {
         if (err) {
           console.log('MCSearh Error: ' + err.message);
@@ -54,12 +52,17 @@ class App extends Component {
     return (
 
       <div className="App">
+        <Header onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} } />
+        <section className="section-selected-mix large-5 large-offset-1">
 
-        <SearchBar onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} }/> {this.state.mixDataListIsReady && <MixList onMixSelect={(selectedMix) => {
-          console.log(selectedMix);
-          this.setState({selectedMix})
-        }} mixes={this.state.mixes}/>
-}
+        </section>
+        <aside className="aside-list large-5 large-pull-1">
+          <MixList
+            onMixSelect={(selectedMix) => { this.setState({selectedMix})}}
+            mixes={this.state.mixes}
+          />
+        </aside>
+
         {this.state.selectedMix && <MixEmbed mix={this.state.selectedMix}/>
 }
 

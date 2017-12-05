@@ -1,4 +1,8 @@
+
 .search-bar-input {
   position: relative;
-  margin: 2rem auto;
+  margin: 2rem;
+
+  border: 1px solid #ddd;
+
 }

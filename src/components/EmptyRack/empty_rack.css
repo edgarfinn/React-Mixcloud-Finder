@@ -1,0 +1,36 @@
+.li {
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+.empty-unit {
+  background-color: rgba(0,0,0,0.3);
+  position: relative;
+  /*width: 10.45cm;*/
+  width: 100%;
+  height: 1.4cm;
+}
+
+.empty-spacer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.empty-ridge {
+  position: absolute;
+  height: 2px;
+  width: 100px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.empty-ridge-left {
+  border-left: 0;
+  left: 0;
+}
+.empty-ridge-right {
+  border-right: 0;
+  right: 0;
+}
