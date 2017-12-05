@@ -6,8 +6,7 @@ import SearchBar from '../SearchBar/search_bar';
 const Header = ({onSearchTermChange}) => {
   return (
     <header className="header-searchbar large-12">
-      <SearchBar onSearchTermChange={onSearchTermChange}/>
-
+      <SearchBar onSearchTermChange={onSearchTermChange} />
     </header>
   )
 }
