@@ -79,6 +79,7 @@
 	border-left: 20px solid transparent;
 }
 
+/* === End Top label === */
 /* === Main label section === */
 
 .label-main {
@@ -144,4 +145,73 @@
   left: 12.5%;
 }
 
-/* === End Top Label === */
+/* === End Main Label Section === */
+/* === Mech Panel === */
+
+.mech-panel {
+  position: relative;
+  margin: auto;
+  background-color: #333;
+	height: 27.3%;
+	width: 65%;
+}
+
+.mech-panel-corner {
+  position: absolute;
+	width: 0;
+	height: 0;
+  top: 0;
+  border-top: 65px solid black;
+}
+
+.mech-corner-left {
+  left: 0;
+	border-right: 30px solid transparent;
+}
+
+.mech-corner-right {
+  right: 0;
+	border-left: 30px solid transparent;
+}
+
+.mech-hole {
+  position: absolute;
+  background-color: #fff;
+}
+
+.mech-middle-hole {
+  height: 13px;
+  width: 13px;
+  right: 46.5%;
+  top: 27%;
+}
+
+.mech-hold-round {
+  border-radius: 50%;
+}
+.round-hole-large {
+  height: 15px;
+  width: 15px;
+}
+
+.round-hole-left {
+  bottom: 10%;
+  left: 10%;
+}
+
+.round-hole-right {
+  bottom: 10%;
+  right: 10%;
+}
+.square-hole {
+  height: 12px;
+  width: 12px;
+  bottom: 25%;
+}
+.square-hole-left {
+  left: 23%;
+}
+
+.square-hole-right {
+  right: 23%;
+}
