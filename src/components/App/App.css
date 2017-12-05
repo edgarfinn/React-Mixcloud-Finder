@@ -1,5 +1,8 @@
+.my-root {
+  height: 100%;
+}
 .App {
-  border: 3px solid pink;
+  position: relative;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -12,13 +15,20 @@
 .App-intro {
   font-size: large;
 }
+
 .section-selected-mix {
-  border: 3px solid red;
+  position: absolute;
+  border: 1px solid #ddd;
   height: 400px;
+  display: inline-block;
 }
 
 .aside-list {
+  border: 1px solid #ddd;
+  display: inline-block;
   box-sizing: border-box;
+  position: absolute;
+  right: 0;
 }
 /*@keyframes App-logo-spin {
   from { transform: rotate(0deg); }

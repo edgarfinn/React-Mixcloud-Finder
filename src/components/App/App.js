@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // components and custom modules
 import './App.css';
-import SearchBar from '../SearchBar/search_bar';
+import Header from '../Header/header';
 import MixList from '../MixList/mix_list';
 import MixEmbed from '../MixEmbed/mix_embed';
 
@@ -52,14 +52,11 @@ class App extends Component {
     return (
 
       <div className="App">
+        <Header onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} } />
+        <section className="section-selected-mix large-5 large-offset-1">
 
-        <SearchBar
-          onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} }/>
-
-        <section className="section-selected-mix large-6">
-          selected
         </section>
-        <aside className="aside-list large-6 large-push-1">
+        <aside className="aside-list large-5 large-pull-1">
           <MixList
             onMixSelect={(selectedMix) => { this.setState({selectedMix})}}
             mixes={this.state.mixes}
