@@ -6,7 +6,6 @@ const EmptyRack = () => {
   let rackContainer = [];
   while(rackContainer.length < 20) {
     const lastInRack = rackContainer.length > 18;
-    console.log();
     const EmptyUnit =
     <li key={rackContainer.length} className="empty-unit">
       {!lastInRack &&

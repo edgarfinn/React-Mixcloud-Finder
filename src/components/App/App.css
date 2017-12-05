@@ -1,6 +1,8 @@
 .App {
+  border: 3px solid pink;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .App-title {
@@ -10,8 +12,15 @@
 .App-intro {
   font-size: large;
 }
+.section-selected-mix {
+  border: 3px solid red;
+  height: 400px;
+}
 
-@keyframes App-logo-spin {
+.aside-list {
+  box-sizing: border-box;
+}
+/*@keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+}*/

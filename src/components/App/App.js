@@ -56,10 +56,15 @@ class App extends Component {
         <SearchBar
           onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} }/>
 
-        <MixList
-          onMixSelect={(selectedMix) => { this.setState({selectedMix})}}
-          mixes={this.state.mixes}
-        />
+        <section className="section-selected-mix large-6">
+          selected
+        </section>
+        <aside className="aside-list large-6 large-push-1">
+          <MixList
+            onMixSelect={(selectedMix) => { this.setState({selectedMix})}}
+            mixes={this.state.mixes}
+          />
+        </aside>
 
         {this.state.selectedMix && <MixEmbed mix={this.state.selectedMix}/>
 }
