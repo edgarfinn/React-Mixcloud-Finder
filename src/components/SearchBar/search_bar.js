@@ -10,14 +10,16 @@ class SearchBar extends Component {
       searchTerm: ''
     };
   }
-  render() {
-    return (<input className="search-bar-input large-3 large-centered" type="text" placeholder={"search"} onChange= { (event) => this.onInputChange(event.target.value) } value={this.state.searchTerm}/>)
-  }
-
+  
   onInputChange(searchTerm) {
     this.setState({searchTerm});
     this.props.onSearchTermChange(searchTerm);
   }
+
+  render() {
+    return (<input className="search-bar-input large-3 large-centered" type="text" placeholder={"search"} onChange= { (event) => this.onInputChange(event.target.value) } value={this.state.searchTerm}/>)
+  }
+
 }
 
 export default SearchBar;

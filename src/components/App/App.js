@@ -14,12 +14,10 @@ class App extends Component {
     this.state = {
       searchTerm: '',
       mixes: [],
-      MCSearchActive: false,
-      mixDataListIsReady: false,
       selectedMix: null
     }
 
-    this.MCSearch('bonobo')
+    // this.MCSearch('bonobo')
 
   }
 
@@ -32,14 +30,14 @@ class App extends Component {
   }
 
   MCSearch(searchTerm) {
-    if (searchTerm === '') {
-      this.setState({mixDataListIsReady: false, mixes: []})
+    if (searchTerm.trim() === '') {
+      this.setState({mixes: []})
     } else {
       const searchQuery = this.formatSearchUrl(this.formatSearchTerm(searchTerm))
 
       return (axios.get(searchQuery).then(res => {
         const mixes = res.data;
-        this.setState({mixes: mixes, mixDataListIsReady: true})
+        this.setState({mixes})
       }).catch((err) => {
         if (err) {
           console.log('MCSearh Error: ' + err.message);
