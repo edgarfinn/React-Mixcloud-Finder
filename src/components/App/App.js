@@ -55,11 +55,14 @@ class App extends Component {
 
       <div className="App">
 
-        <SearchBar onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} }/> {this.state.mixDataListIsReady && <MixList onMixSelect={(selectedMix) => {
-          console.log(selectedMix);
-          this.setState({selectedMix})
-        }} mixes={this.state.mixes}/>
-}
+        <SearchBar
+          onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} }/>
+
+        <MixList
+          onMixSelect={(selectedMix) => { this.setState({selectedMix})}}
+          mixes={this.state.mixes}
+        />
+
         {this.state.selectedMix && <MixEmbed mix={this.state.selectedMix}/>
 }
 
