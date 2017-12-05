@@ -1,0 +1,147 @@
+
+.tape {
+  position: relative;
+  margin: auto;
+  width: 10.05cm;
+  height: 6.4cm;
+  border: 3px solid black;
+  border-radius: 6px;
+  background-color: black;
+}
+
+.wing {
+  height: 30%;
+  position: absolute;
+  top: 60%;
+  width: 5px;
+  background-color: black;
+}
+
+.wing-left {
+  left: -8px;
+}
+
+.wing-right {
+  right: -8px;
+}
+
+.screw {
+  width: 0.28cm;
+  height: 0.3cm;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.screw-top {
+  top: 1%;
+}
+
+.screw-bottom {
+  bottom: 1%;
+}
+
+.screw-left {
+  left: 1%;
+}
+
+.screw-right {
+  right: 1%;
+}
+
+/* === Top Label === */
+
+.label-top {
+  position: relative;
+  width: 90%;
+  height: 22%;
+  margin-top: 4%;
+  margin-left: 5%;
+  background-color: #fff;
+}
+
+.top-label-corner {
+  position: absolute;
+	width: 0;
+	height: 0;
+  top: 0;
+  border-top: 20px solid black;
+}
+
+.label-corner-left {
+  left: 0;
+	border-right: 20px solid transparent;
+}
+
+.label-corner-right {
+  right: 0;
+	border-left: 20px solid transparent;
+}
+
+/* === Main label section === */
+
+.label-main {
+  posistion: relative;
+  height: 45%;
+  width: 90%;
+  background-color: tomato;
+  margin-left: 5%;
+  margin-top: 0.5%;
+}
+
+.wheels-window-outer {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  height: 75%;
+  width: 80%;
+  background-color: tomato;
+}
+
+.wheel-window {
+  position: absolute;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  background-color: black;
+}
+
+.wheel-window-left {
+  left: 0;
+  border-top-left-radius: 35%;
+  border-bottom-left-radius: 35%;
+}
+
+.wheel-window-right {
+  right: 0;
+  border-top-right-radius: 35%;
+  border-bottom-right-radius: 35%;
+}
+
+.tape-window-center {
+  position: absolute;
+  left: 29%;
+  height: 100%;
+  width: 42%;
+  background-color: black;
+}
+
+.wheel {
+  position: relative;
+  top: 11%;
+  height: 75%;
+  width: 75%;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.wheel-right {
+  left: 12.5%;
+}
+
+.wheel-left {
+  left: 12.5%;
+}
+
+/* === End Top Label === */

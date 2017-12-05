@@ -4,6 +4,7 @@ import axios from 'axios';
 // components and custom modules
 import './App.css';
 import Header from '../Header/header';
+import CurrentMix from '../CurrentMix/current_mix';
 import MixList from '../MixList/mix_list';
 import MixEmbed from '../MixEmbed/mix_embed';
 
@@ -54,6 +55,8 @@ class App extends Component {
       <div className="App">
         <Header onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} } />
         <section className="section-selected-mix large-5 large-offset-1">
+          <CurrentMix />
+
 
         </section>
         <aside className="aside-list large-5 large-pull-1">
