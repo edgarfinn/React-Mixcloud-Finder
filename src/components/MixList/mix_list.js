@@ -1,11 +1,11 @@
 import React from 'react';
 import './mix_list.css';
 import MixListItem from '../MixListItem/mix_list_item';
+import EmptyRack from '../EmptyRack/empty_rack';
 
 const MixList = ({mixes, onMixSelect}) => {
 
   if (mixes.data) {
-    console.log('>.',mixes.data);
     const mixItemList = mixes.data.map((mix, index, array) => {
       return (
         <div key={mix.url}>
@@ -16,15 +16,17 @@ const MixList = ({mixes, onMixSelect}) => {
           </div>
         )
       })
-
       return (
         <ul className="list-tape-rack">
           {mixItemList}
         </ul>
       )
-  } else {
+  }
+  else {
+    console.log('list is empty');
     return (
       <ul className="list-tape-rack">
+        <EmptyRack />
       </ul>
     )
   }
