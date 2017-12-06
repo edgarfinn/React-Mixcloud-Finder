@@ -19,7 +19,7 @@ class App extends Component {
       nowPlayingTitle: null
     }
 
-    this.MCSearch('Dixon')
+    // this.MCSearch('Dixon')
 
   }
 
