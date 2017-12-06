@@ -13,5 +13,5 @@ const MixEmbed = ({mix}) => {
     </div>
   )
 }
-console.dir(MixEmbed);
+
 export default MixEmbed;
