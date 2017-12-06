@@ -79,6 +79,21 @@
 	border-left: 20px solid transparent;
 }
 
+.header-now-playing {
+  text-align: center;
+  padding-top: 12px;
+}
+
+.title-now-playing {
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+  width: 90%;
+  background-color: rgba(255,250,200,0.8);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  font-size: 16px;
+}
+
 /* === End Top label === */
 /* === Main label section === */
 
@@ -155,11 +170,14 @@
   border-radius: 50%;
   height: 88%;
   width: 88%;
+}
+.wheel-playing {
   -webkit-animation:roll 2s infinite linear;
   -moz-animation:roll 2s infinite linear;
   animation:roll 3s infinite linear;
 }
-/*@-webkit-keyframes roll{
+
+@-webkit-keyframes roll{
   from{
     transform:rotate(0deg);
   }
@@ -182,7 +200,7 @@
   to{
     transform:rotate(360deg);
   }
-}*/
+}
 
 .wheel-tooth {
   position: absolute;
@@ -200,12 +218,12 @@
 
 .spindle {
   position: absolute;
-  top: 6px;
-  left: 6px;
+  top: 5px;
+  left: 5px;
   border-radius: 50%;
   background-color: white;
-  height: calc(100% - 12px);
-  width: calc(100% - 12px);
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
 }
 
 /* === End Main Label Section === */

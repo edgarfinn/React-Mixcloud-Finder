@@ -1,7 +1,7 @@
 import React from 'react';
 import './now_playing_cassette.css';
 
-const NowPlayingCassette = () => {
+const NowPlayingCassette = ({title}) => {
 
   const Teeth = ()=> {
     const Tooth = ({position}) => {
@@ -18,6 +18,13 @@ const NowPlayingCassette = () => {
     }
       return toothList;
   }
+  const MixTitle = ({title}) => {
+    return (
+      <header className="header-now-playing">
+        <h3 className="title-now-playing nowrap">{title}</h3>
+      </header>
+    )
+  }
 
   return (
     <div className="tape">
@@ -28,6 +35,7 @@ const NowPlayingCassette = () => {
       <div className="label-top">
         <div className="top-label-corner label-corner-left"></div>
         <div className="top-label-corner label-corner-right"></div>
+        {title && <MixTitle title={title} />}
       </div>
       <div className="label-main">
         <div className="wheels-window-outer">

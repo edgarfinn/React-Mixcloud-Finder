@@ -8,8 +8,10 @@ const MixEmbed = ({mix}) => {
   const encodedUrl = "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&autoplay=1&feed=%2F" + userName + "%2F" + encodedMixName + "%2F";
 
   return (
-    <iframe title={encodedUrl} className="embed-iframe" src={encodedUrl} frameBorder="0"></iframe>
+    <div>
+      <iframe id="mix-player" title={encodedUrl} className="embed-iframe" src={encodedUrl} frameBorder="0"></iframe>
+    </div>
   )
 }
-
+console.dir(MixEmbed);
 export default MixEmbed;

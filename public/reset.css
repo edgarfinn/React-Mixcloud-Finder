@@ -53,6 +53,22 @@ table {
 /* ===== END MEYERWEB RESET ===== */
 /* ============================== */
 
+/* ======== CUSTOM RESET ======== */
+/* ============================== */
+
+h3, p {
+	font-family: monospace;
+}
+
+.nowrap {
+	display: inline-block;
+	text-decoration: inherit;
+	white-space: nowrap;
+	}
+
+/* ====== END CUSTOM RESET ====== */
+/* ============================== */
+
 /* ============================== */
 /* ============ GRID ============ */
 
