@@ -3,15 +3,18 @@ import './now_playing_cassette.css';
 
 const NowPlayingCassette = () => {
 
-  const Teethe = ()=> {
-    const Tooth = () => {
+  const Teeth = ()=> {
+    const Tooth = ({position}) => {
+      const toothStyle = {
+        transform: 'rotate('+position.toString()+'deg)'
+      }
       return (
-        <div className="wheel-tooth"></div>
+        <i className="wheel-tooth" style={toothStyle}></i>
       )
     }
     let toothList = [];
     while(toothList.length < 6) {
-      toothList.push( <Tooth key={toothList.length} position={(360/(toothList.length)+1)}/> );
+      toothList.push( <Tooth key={toothList.length} position={60*toothList.length}/> );
     }
       return toothList;
   }
@@ -30,12 +33,19 @@ const NowPlayingCassette = () => {
         <div className="wheels-window-outer">
           <div className="wheel-window wheel-window-left">
             <div className="wheel wheel-left">
+              <div className="inner-wheel inner-wheel-left">
+                <Teeth />
+                <div className="spindle"></div>
+              </div>
             </div>
           </div>
           <div className="tape-window-center"></div>
           <div className="wheel-window wheel-window-right">
             <div className="wheel wheel-right">
-              <Teethe />
+              <div className="inner-wheel inner-wheel-right">
+                <Teeth />
+                <div className="spindle"></div>
+              </div>
             </div>
           </div>
         </div>
