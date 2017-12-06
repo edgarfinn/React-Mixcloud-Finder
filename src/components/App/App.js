@@ -4,6 +4,7 @@ import axios from 'axios';
 // components and custom modules
 import './App.css';
 import Header from '../Header/header';
+import CurrentMix from '../CurrentMix/current_mix';
 import MixList from '../MixList/mix_list';
 import MixEmbed from '../MixEmbed/mix_embed';
 
@@ -14,10 +15,11 @@ class App extends Component {
     this.state = {
       searchTerm: '',
       mixes: [],
-      selectedMix: null
+      selectedMix: null,
+      nowPlayingTitle: null
     }
 
-    // this.MCSearch('bonobo')
+    // this.MCSearch('Dixon')
 
   }
 
@@ -54,17 +56,17 @@ class App extends Component {
       <div className="App">
         <Header onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} } />
         <section className="section-selected-mix large-5 large-offset-1">
+          <CurrentMix title={this.state.nowPlayingTitle}/>
 
         </section>
         <aside className="aside-list large-5 large-pull-1">
           <MixList
-            onMixSelect={(selectedMix) => { this.setState({selectedMix})}}
+            onMixSelect={(selectedMix, title) => { this.setState({selectedMix, nowPlayingTitle: title})}}
             mixes={this.state.mixes}
           />
         </aside>
 
-        {this.state.selectedMix && <MixEmbed mix={this.state.selectedMix}/>
-}
+        {this.state.selectedMix && <MixEmbed mix={this.state.selectedMix}/>}
 
       </div>
     );
