@@ -7,6 +7,7 @@ import Header from '../Header/header';
 import CurrentMix from '../CurrentMix/current_mix';
 import MixList from '../MixList/mix_list';
 import MixEmbed from '../MixEmbed/mix_embed';
+import WidgetScript from '../WidgetScript/widget_script'
 
 class App extends Component {
   constructor(props) {
@@ -16,10 +17,10 @@ class App extends Component {
       searchTerm: '',
       mixes: [],
       selectedMix: null,
-      nowPlayingTitle: null
+      nowPlayingTitle: null,
+      playerIsLoaded: false,
+      playing: false
     }
-
-    // this.MCSearch('Dixon')
 
   }
 
@@ -54,19 +55,41 @@ class App extends Component {
     return (
 
       <div className="App">
-        <Header onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} } />
-        <section className="section-selected-mix large-5 large-offset-1">
-          <CurrentMix title={this.state.nowPlayingTitle}/>
+        <Header
+          onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} }
+        />
 
+        <section className="section-selected-mix large-5 large-offset-1">
+          <CurrentMix
+            title={this.state.nowPlayingTitle}
+            playing={this.state.playing}
+          />
         </section>
+
         <aside className="aside-list large-5 large-pull-1">
           <MixList
-            onMixSelect={(selectedMix, title) => { this.setState({selectedMix, nowPlayingTitle: title})}}
-            mixes={this.state.mixes}
-          />
+            onMixSelect={(selectedMix, title) => {
+            this.setState({selectedMix, nowPlayingTitle: title})
+          }}
+            mixes={this.state.mixes}/>
         </aside>
 
-        {this.state.selectedMix && <MixEmbed mix={this.state.selectedMix}/>}
+        {this.state.selectedMix &&
+          <MixEmbed
+            mix={this.state.selectedMix}
+            onIframeLoad= { () => {
+              this.setState({playerIsLoaded: true})
+            } }
+          />
+        }
+          {this.state.playerIsLoaded &&
+            <WidgetScript
+              onPause= { () => {
+                this.setState({playing: false}); }}
+              onPlay= { () => {
+                this.setState({playing: true}) } }/>
+          }
+
 
       </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import './now_playing_cassette.css';
 
-const NowPlayingCassette = ({title}) => {
+const NowPlayingCassette = ({title, playing}) => {
 
   const Teeth = ()=> {
     const Tooth = ({position}) => {
@@ -41,7 +41,7 @@ const NowPlayingCassette = ({title}) => {
         <div className="wheels-window-outer">
           <div className="wheel-window wheel-window-left">
             <div className="wheel wheel-left">
-              <div className="inner-wheel inner-wheel-left">
+              <div className={playing ? "inner-wheel wheel-playing inner-wheel-left" : "inner-wheel inner-wheel-left"} >
                 <Teeth />
                 <div className="spindle"></div>
               </div>
@@ -50,7 +50,7 @@ const NowPlayingCassette = ({title}) => {
           <div className="tape-window-center"></div>
           <div className="wheel-window wheel-window-right">
             <div className="wheel wheel-right">
-              <div className="inner-wheel inner-wheel-right">
+              <div className={playing ? "inner-wheel wheel-playing inner-wheel-left" : "inner-wheel inner-wheel-left"}>
                 <Teeth />
                 <div className="spindle"></div>
               </div>

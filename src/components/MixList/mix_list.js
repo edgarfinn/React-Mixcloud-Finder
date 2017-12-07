@@ -23,7 +23,6 @@ const MixList = ({mixes, onMixSelect}) => {
       )
   }
   else {
-    console.log('list is empty');
     return (
       <ul className="list-tape-rack">
         <EmptyRack />
