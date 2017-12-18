@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WidgetScript = ({onPause,onPlay}) => {
+export default ({onPause,onPlay}) => {
   return (
     <script
       dangerouslySetInnerHTML={{
@@ -23,6 +23,4 @@ const WidgetScript = ({onPause,onPlay}) => {
 
     ></script>
   )
-}
-
-export default WidgetScript;
+};

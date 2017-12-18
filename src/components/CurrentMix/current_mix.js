@@ -1,11 +1,14 @@
 import React from 'react';
 import './current_mix.css';
-import NowPlayingCassette from '../NowPlayingCassette/now_playing_cassette'
+import NowPlayingCassette from '../NowPlayingCassette/now_playing_cassette';
 
-const CurrentMix = ({title, playing}) => {
+export default ({title, playing, mix}) => {
   return (
-    <NowPlayingCassette title={title} playing={playing}/>
+    <section className="section-selected-mix large-8">
+      <div className="now-playing-wrapper large-12">
+        <NowPlayingCassette title={title} playing={playing} />
+
+      </div>
+    </section>
   )
 }
-
-export default CurrentMix;

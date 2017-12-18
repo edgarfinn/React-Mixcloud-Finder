@@ -2,7 +2,7 @@ import React from 'react';
 import './mix_list_item.css'
 import Spacer from '../Spacer/spacer';
 
-const MixListItem = ({mix, onMixSelect, lastInList}) => {
+export default ({mix, onMixSelect, lastInList}) => {
   const title = mix.name.length > 30
     ? mix.name.substr(0, 30) + "..."
     : mix.name;
@@ -17,6 +17,4 @@ const MixListItem = ({mix, onMixSelect, lastInList}) => {
 }
     </li>
   )
-}
-
-export default MixListItem;
+};

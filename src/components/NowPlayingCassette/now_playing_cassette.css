@@ -1,7 +1,8 @@
 
 .tape {
   position: relative;
-  margin: auto;
+  margin-right: 5.166665%;
+  float: right;
   width: 10.05cm;
   height: 6.4cm;
   border: 3px solid black;

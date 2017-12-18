@@ -1,7 +1,7 @@
 import React from 'react';
 import './now_playing_cassette.css';
 
-const NowPlayingCassette = ({title, playing}) => {
+export default ({title, playing}) => {
 
   const Teeth = ()=> {
     const Tooth = ({position}) => {
@@ -71,6 +71,4 @@ const NowPlayingCassette = ({title, playing}) => {
       <div className="screw screw-bottom screw-right"></div>
     </div>
   )
-}
-
-export default NowPlayingCassette;
+};

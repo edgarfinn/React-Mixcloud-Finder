@@ -7,9 +7,10 @@ import Header from '../Header/header';
 import CurrentMix from '../CurrentMix/current_mix';
 import MixList from '../MixList/mix_list';
 import MixEmbed from '../MixEmbed/mix_embed';
-import WidgetScript from '../WidgetScript/widget_script'
+import WidgetScript from '../WidgetScript/widget_script';
 
-class App extends Component {
+
+export default class App extends Component {
   constructor(props) {
     super(props);
 
@@ -38,10 +39,13 @@ class App extends Component {
     } else {
       const searchQuery = this.formatSearchUrl(this.formatSearchTerm(searchTerm))
 
-      return (axios.get(searchQuery).then(res => {
-        const mixes = res.data;
-        this.setState({mixes})
-      }).catch((err) => {
+      return (
+        axios.get(searchQuery)
+        .then(res => {
+          const mixes = res.data;
+          this.setState({mixes})
+        })
+        .catch((err) => {
         if (err) {
           console.log('MCSearh Error: ' + err.message);
           return;
@@ -59,14 +63,13 @@ class App extends Component {
           onSearchTermChange= { (searchTerm) => { this.MCSearch(searchTerm)} }
         />
 
-        <section className="section-selected-mix large-5 large-offset-1">
-          <CurrentMix
-            title={this.state.nowPlayingTitle}
-            playing={this.state.playing}
-          />
-        </section>
+        <CurrentMix
+          title={this.state.nowPlayingTitle}
+          playing={this.state.playing}
+          mix={this.state.selectedMix}
+        />
 
-        <aside className="aside-list large-5 large-pull-1">
+        <aside className="aside-list large-4 large-offset-1">
           <MixList
             onMixSelect={(selectedMix, title) => {
             this.setState({selectedMix, nowPlayingTitle: title})
@@ -94,6 +97,4 @@ class App extends Component {
       </div>
     );
   }
-}
-
-export default App;
+};

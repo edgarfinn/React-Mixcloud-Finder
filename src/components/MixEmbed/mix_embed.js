@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 import './mix_embed.css';
 
-class MixEmbed extends Component {
-
-  constructor(props) {
-    super(props)
-  }
+export default class MixEmbed extends Component {
 
   render() {
 
@@ -32,5 +28,3 @@ class MixEmbed extends Component {
     )
   }
 }
-
-export default MixEmbed;
