@@ -1,0 +1,13 @@
+.section-selected-mix {
+  box-sizing: border-box;
+  position: absolute;
+  height: 444px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 0;
+}
+.now-playing-wrapper {
+  position: absolute;
+  bottom: 0;
+
+}

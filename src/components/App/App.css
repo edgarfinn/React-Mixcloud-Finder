@@ -16,13 +16,6 @@
   font-size: large;
 }
 
-.section-selected-mix {
-  position: absolute;
-  border: 1px solid #ddd;
-  height: 400px;
-  display: inline-block;
-}
-
 .aside-list {
   border: 1px solid #ddd;
   display: inline-block;

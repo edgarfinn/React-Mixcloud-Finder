@@ -2,7 +2,7 @@ import React from 'react';
 import './empty_rack.css';
 import EmptySpacer from '../EmptySpacer/empty_spacer';
 
-const EmptyRack = () => {
+export default () => {
   let rackContainer = [];
   while(rackContainer.length < 20) {
     const lastInRack = rackContainer.length > 18;
@@ -15,6 +15,4 @@ const EmptyRack = () => {
     rackContainer.push(EmptyUnit);
   }
   return (rackContainer);
-}
-
-export default EmptyRack;
+};

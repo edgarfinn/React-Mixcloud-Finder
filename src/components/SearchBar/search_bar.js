@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './search_bar.css';
 
-class SearchBar extends Component {
+export default class SearchBar extends Component {
 
   constructor(props) {
     super(props)
@@ -21,7 +21,4 @@ class SearchBar extends Component {
         <input className="search-bar-input large-3 large-centered" type="text" placeholder={"search"} onChange= { (event) => this.onInputChange(event.target.value) } value={this.state.searchTerm}/>
     )
   }
-
-}
-
-export default SearchBar;
+};

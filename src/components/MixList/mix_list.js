@@ -3,7 +3,7 @@ import './mix_list.css';
 import MixListItem from '../MixListItem/mix_list_item';
 import EmptyRack from '../EmptyRack/empty_rack';
 
-const MixList = ({mixes, onMixSelect}) => {
+export default ({mixes, onMixSelect}) => {
 
   if (mixes.data) {
     const mixItemList = mixes.data.map((mix, index, array) => {
@@ -23,14 +23,10 @@ const MixList = ({mixes, onMixSelect}) => {
       )
   }
   else {
-    console.log('list is empty');
     return (
       <ul className="list-tape-rack">
         <EmptyRack />
       </ul>
     )
   }
-
-}
-
-export default MixList;
+};
